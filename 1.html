@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>JS Validation</title>
+        <script type="text/javascript">
+        function validateform()
+        {
+        var name=document.getElementByID("Name").value;
+        var age=document.getElementByID("age").value;
+        var gender=document.getElementsByName("gender");
+        var address=document.getElementByID("ad").value;
+	    var e=document.getElementByID("state");
+	    var strUser=e.options[e.selectedIndex].value;
+	    var no=document.getElementByID("phone").value;
+	    var x=document.getElementByID("e").value;
+	    if(name=="")
+	    {
+	    alert("Name field empty");
+	    return false
+	    }
+	    else
+	    {
+	    for(i=0;i<name.length;i++)
+	    {
+	    if(!((name.charAt(i)>='a' && name.charAt(i)<='z')||(name.charAt(i)>='A' && name.charAt(i)<='Z')))
+	    {
+	    alert("Enetr alphabets only in name field");
+	    return false;
+	    }
+	    }
+	    if(name.length<5)
+	    {
+	    alert("UserName length should be greater than 5");
+	    return false;
+	    }
+	    
+        }
+        </script>
+    </head>
+    <body>
+    <center>
+    <table>
+    </table>
+    </center>
+    </body>
+</html>    
