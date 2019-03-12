@@ -15,7 +15,7 @@
 	    if(name=="")
 	    {
 	    alert("Name field empty");
-	    return false
+	    return false;
 	    }
 	    else
 	    {
@@ -27,18 +27,128 @@
 	    return false;
 	    }
 	    }
+	    }
 	    if(name.length<5)
 	    {
 	    alert("UserName length should be greater than 5");
 	    return false;
 	    }
-	    
+	    if(age=="")
+	    {
+	    alert("Age field empty");
+	    return false;
+	    }
+	    if(age<1||age>120)
+	    {
+	    alert("Give a valid age");
+	    return false;
+	    }
+	    else
+	    {
+	    for(i=0;i<age.length;i++)
+	    {
+	    if(!(age.charAt(i)>='0' && name.charAt(i)<='9'))
+	    {
+	    alert("Enetr numbers only in name field");
+	    return false;
+	    }
+	    }
+	    }
+	    if(gender[0].checked==false||gender[1].checked==false)
+	    {
+	    alert("Gender is empty");
+	    return false;
+	    }
+	    if(address=="")
+	    {
+	    alert("Address field empty");
+	    return false;
+	    }
+	    if(strUser==0)
+	    {
+	    alert("Please select your state");
+	    return false;
+	    }
+	    if(no==0)
+	    {
+	    alert("Number field is empty");
+	    return false;
+	    }
+	    if(no.length<10||no.length>10)
+	    {
+	    alert("Please enter a valid mobile number");
+	    return false;
+	    }
+	    else
+	    {
+	    for(i=0;i<no.length;i++)
+	    {
+	    if(!(no.charAt(i)>='0' && no.charAt(i)<='9'))
+	    {
+	    alert("Enetr numbers only in phone field");
+	    return false;
+	    }
+	    }
+	    }
+	    if(x=="")
+	    {
+	    alert("Email field is empty");
+	    return false;
+	    }
+	    else
+	    {
+	    var atpos=x.indexOf("e");
+	    var dotpos=x.lastindexOf(".");
+	    if(atpos<1||dotpos<atpos+2||dotpos+2>=x.length)
+	    {
+	    alert("Not a valid email address");
+	    return false;
+	    }
+	    }
         }
         </script>
     </head>
     <body>
     <center>
-    <table>
+    <table border="0" bgcolor="skyblue">
+    <caption align="top">User Registration</caption>
+    <form name="UserReg" action="User.html" method="post" onsubmit="return validateform()">
+    <tr>
+        <td height="28" align="right">Name :&nbsp;</td>
+        <td height="28"><input type="text" id="Name" size="25"/></td>
+    </tr>
+    <tr>
+        <td height="28" align="right">Age :&nbsp;</td>
+        <td height="28"><input type="text" id="Age" size="25"/></td>
+    </tr>
+    <tr>
+        <td height="28" align="right">Gender :&nbsp;</td>
+        <td height="28"><input type="radio" id="Gender" value="male"/>Male :<input type="radio" name="gender" value="female">Female :</td>
+    </tr>
+    <tr>
+        <td height="28" align="right" valign="top">Address :&nbsp;</td>
+        <td height="28"><textarea row="6" col="20" id="ad"></textarea></td>
+    </tr>
+    <tr>
+        <td height="28" align="right">State :&nbsp;</td>
+        <td height="28"><select id="state">
+        <option value="0">--select--</option>
+        <option value="1">AP</option>
+        <option value="2">TS</option>
+        <option value="3">MH</option></td>
+    </tr>
+    <tr>
+        <td height="28" align="right">Mob no. :&nbsp;</td>
+        <td height="28"><input type="text" id="phone" size="25"></td>
+    </tr>
+    <tr>
+        <td height="28" align="right">Email ID :&nbsp;</td>
+        <td height="28"><input type="text" id="e" size="25"></td>
+    </tr>
+    <tr>
+        <td height="35" align="right">
+        <td height="35"><input type="submit" value="Sign Up" name="UserSignUp"/></td>
+    </tr>
     </table>
     </center>
     </body>
